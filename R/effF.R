@@ -16,7 +16,7 @@ eff_F = function(data, Y, D, Z, controls = NULL, FE = NULL,
   if (is.null(weights)) {
     ivmod = lfe::felm(fmla, data = data)
   } else {
-    ivmod = lfe::felm(fmla, data = data, weights = data[, weights])
+    ivmod = lfe::felm(fmla, data = data, weights = data[[weights]])
   }
   # first stage model object
   fsmod = ivmod$stage1
